@@ -1,0 +1,37 @@
+{
+  "name": "@profile.place/frontend",
+  "description": "Frontend portion of profile.place, made with Vue.js and TailwindCSS",
+  "version": "1.0.0",
+  "repository": "https://github.com/profile-place/frontend",
+  "author": "The profile.place Team <team@profile.place> (https://profile.place)",
+  "license": "GPL-3.0",
+  "homepage": "https://profile.place",
+  "scripts": {
+    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@augu/orchid": "1.3.1",
+    "core-js": "3.6.5",
+    "register-service-worker": "1.7.1",
+    "vue": "2.6.11",
+    "vue-router": "3.3.4",
+    "vuex": "3.5.1"
+  },
+  "devDependencies": {
+    "@aero/eslint-config": "1.0.5",
+    "@vue/cli-plugin-babel": "4.4.6",
+    "@vue/cli-plugin-eslint": "4.4.6",
+    "@vue/cli-plugin-pwa": "4.4.6",
+    "@vue/cli-plugin-router": "4.4.6",
+    "@vue/cli-plugin-vuex": "4.4.6",
+    "@vue/cli-service": "4.4.6",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.6.0",
+    "eslint-plugin-vue": "6.2.2",
+    "sass": "1.26.10",
+    "sass-loader": "9.0.2",
+    "vue-template-compiler": "2.6.11"
+  }
+}
