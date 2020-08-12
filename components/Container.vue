@@ -12,8 +12,9 @@ export default {
 
 <style lang="scss" scoped>
 .section-mod {
-  background: #2C2F33;
+  background: #23272A;
   border: 0;
   border-radius: 1.5rem;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.50);
 }
 </style>

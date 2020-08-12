@@ -25,6 +25,10 @@ html {
   -webkit-user-drag: none;
 }
 
+body {
+  background: #2C2F33
+}
+
 *,
 *::before,
 *::after {

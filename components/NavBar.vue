@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex items-center justify-between flex-wrap bg-blackish p-6">
+  <nav class="flex items-center justify-between flex-wrap bg-blackish p-6 shading">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
       <nuxt-link to="/" class="font-semibold text-xl tracking-tight">
         profile.place
@@ -44,6 +44,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.shading {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
 </style>

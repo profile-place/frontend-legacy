@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-magic">
     <NavBar/>
     <div class="container mx-auto">
       <img draggable="false" class="mx-auto rounded-mod mt-12" src="~/assets/icons/logo.png" alt="logo">
@@ -30,21 +30,17 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .rounded-mod {
   border: 0;
   border-radius: 50%;
 }
 
-body {
+.bg-magic:after {
   background: #23272A;
 }
 
-body:after {
-  background: #23272A !important;
-}
-
-body:before {
+.bg-magic:before {
   content: '';
   position: fixed;
   width: 100vw;
