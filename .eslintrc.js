@@ -9,5 +9,10 @@ module.exports = {
 	parserOptions: {
 		parser: 'babel-eslint'
 	},
-	extends: ['@aero', 'plugin:nuxt/base']
+	extends: ['@aero', 'plugin:nuxt/base'],
+	rules: {
+		'no-warning-comments': 'off',
+		'max-len': 'off',
+		'no-trailing-spaces': 'off'
+	}
 };

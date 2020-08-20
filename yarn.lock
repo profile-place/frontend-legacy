@@ -7,6 +7,13 @@
   resolved "https://registry.yarnpkg.com/@aero/eslint-config/-/eslint-config-1.0.5.tgz#b2831665fe300dfb70c2176970004d4575002e8b"
   integrity sha512-Xjv39AoZukHZt2FWLiukAjYBA2EmSGQy+VXZwEWmp48D3MTINLBWVhYFIGb3f5BEv2Vh1T7aY5g9p03Ep6bO8Q==
 
+"@augu/orchid@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@augu/orchid/-/orchid-1.5.0.tgz#4b69089a7aa6be77b4fdb59b212eeeacab2b3666"
+  integrity sha512-wLAVTFh9GkXXHBHR1qh9y7YU6lbeCrWyk2RzJQH314n35n6K62KlD+iqniwpp69mrYqSKVMd/hD7SLVAX2qs5g==
+  optionalDependencies:
+    form-data "3.0.0"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
@@ -2634,7 +2641,7 @@ colorette@^1.2.1:
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
 
-combined-stream@^1.0.6, combined-stream@~1.0.6:
+combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
   integrity sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
@@ -3621,6 +3628,15 @@ eslint-plugin-node@^11.1.0:
     resolve "^1.10.1"
     semver "^6.1.0"
 
+eslint-plugin-nuxt@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-nuxt/-/eslint-plugin-nuxt-1.0.0.tgz#68a5da64ab780e9752fbccd7a0bb609c3d900b9f"
+  integrity sha512-/wStWT367UXimakvNkYmG66dlP+O4CIEDS7Kg8BrwSlLX/ubQRZowVT3oJqspJJvR6jqJPMdGym5PBYd5iE+xg==
+  dependencies:
+    eslint-plugin-vue "^6.2.2"
+    semver "^7.3.2"
+    vue-eslint-parser "^7.0.0"
+
 eslint-plugin-promise@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz#845fd8b2260ad8f82564c1222fce44ad71d9418a"
@@ -4148,6 +4164,15 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
+
+form-data@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.0.tgz#31b7e39c85f1355b7139ee0c647cf0de7f83c682"
+  integrity sha512-CKMFDglpbMi6PyN+brwB9Q/GOw0eAnsrEZDgcsH5Krhz5Od/haKHAX0NmQfha2zPPz0JpWzA7GJHGSnvCRLWsg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
 
 form-data@~2.3.2:
   version "2.3.3"
