@@ -1,19 +1,13 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true
-  },
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
-  extends: [
-    '@aero',
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
-  ],
-  plugins: [
-  ],
-  // add your custom rules here
-  rules: {}
-}
+	root: true,
+	parser: 'vue-eslint-parser',
+	env: {
+		browser: true,
+		node: true,
+		es6: true
+	},
+	parserOptions: {
+		parser: 'babel-eslint'
+	},
+	extends: ['@aero', 'plugin:nuxt/base']
+};

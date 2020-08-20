@@ -32,18 +32,16 @@
     </div>
   </nav>
 </template>
-
 <script>
 export default {
-  name: 'NavBar',
-  data () {
-    return {
-      menuVisible: true
-    }
-  }
-}
+	name: 'NavBar',
+	data() {
+		return {
+			menuVisible: true
+		};
+	}
+};
 </script>
-
 <style lang="scss" scoped>
 .shading {
   box-shadow: 0 2px 10px rgba(0,0,0,0.35);

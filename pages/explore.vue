@@ -21,22 +21,20 @@
     <FooterBar/>
   </div>
 </template>
-
 <script>
-import NavBar from '~/components/NavBar'
-import FooterBar from '~/components/FooterBar'
-import Container from '~/components/Container'
+import NavBar from '~/components/NavBar';
+import FooterBar from '~/components/FooterBar';
+import Container from '~/components/Container';
 
 export default {
-  name: 'explore',
-  components: {
-    Container,
-    FooterBar,
-    NavBar
-  }
-}
+	name: 'explore',
+	components: {
+		Container,
+		FooterBar,
+		NavBar
+	}
+};
 </script>
-
 <style lang="scss" scoped>
 body {
   background: #23272A !important;

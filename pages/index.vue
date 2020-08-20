@@ -12,24 +12,22 @@
     <FooterBar/>
   </div>
 </template>
-
 <script>
-import NavBar from '~/components/NavBar'
-import FooterBar from '~/components/FooterBar'
+import NavBar from '~/components/NavBar';
+import FooterBar from '~/components/FooterBar';
 
 export default {
-  components: {
-    FooterBar,
-    NavBar
-  },
-  head () {
-    return {
-      title: 'Home | profile.place'
-    }
-  }
-}
+	components: {
+		FooterBar,
+		NavBar
+	},
+	head() {
+		return {
+			title: 'Home | profile.place'
+		};
+	}
+};
 </script>
-
 <style lang="scss" scoped>
 .rounded-mod {
   border: 0;

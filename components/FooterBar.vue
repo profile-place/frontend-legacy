@@ -14,13 +14,8 @@
     </p>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'FooterBar'
-}
+	name: 'FooterBar'
+};
 </script>
-
-<style scoped>
-
-</style>

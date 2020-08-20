@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'Container'
-}
+	name: 'Container'
+};
 </script>
 
 <style lang="scss" scoped>
