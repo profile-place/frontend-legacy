@@ -11,7 +11,8 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@augu/orchid": "^1.5.0",
+    "actual-urlsafe-base64": "^1.0.0",
+    "axios": "^0.20.0",
     "nuxt": "^2.14.0"
   },
   "devDependencies": {
