@@ -6,8 +6,8 @@
 
 <script>
 export default {
-	name: 'Container'
-};
+  name: 'Container'
+}
 </script>
 
 <style lang="scss" scoped>
@@ -15,6 +15,6 @@ export default {
   background: #23272A;
   border: 0;
   border-radius: 1.5rem;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.50);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.50);
 }
 </style>

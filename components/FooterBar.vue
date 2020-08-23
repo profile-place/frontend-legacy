@@ -4,11 +4,11 @@
       profile.place | Copyright &copy; {{ (new Date()).getFullYear() }}
     </p>
     <p class="text-center text-greyple">
-      <nuxt-link to="/privacy" class="text-blue-500">
+      <nuxt-link class="text-blue-500" to="/privacy">
         Privacy Policy
       </nuxt-link>
-       and
-      <nuxt-link to="/terms" class="text-blue-500">
+      and
+      <nuxt-link class="text-blue-500" to="/terms">
         Terms of Use
       </nuxt-link>
     </p>
@@ -16,6 +16,6 @@
 </template>
 <script>
 export default {
-	name: 'FooterBar'
-};
+  name: 'FooterBar'
+}
 </script>
