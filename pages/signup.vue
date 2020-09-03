@@ -3,16 +3,6 @@
     <Container class="mt-24" style="max-width: 28rem">
       <form ref="login" class="w-full max-w-xs  mx-auto" @submit.prevent="process">
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-          <input
-            id="username"
-            v-model="username"
-            class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            placeholder="your cute username here"
-          >
-        </div>
-        <div class="mb-6">
           <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
           <input
             id="user-id"
@@ -22,7 +12,7 @@
             placeholder="user@profile.place"
           >
         </div>
-        <div class="mb-8">
+        <div class="mb-6">
           <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
           <input
             id="password"
@@ -67,7 +57,6 @@ export default {
   data () {
     return {
       isLoading: false,
-      username: '',
       password: '',
       email: '',
       error: null
@@ -108,24 +97,32 @@ export default {
         return
       }
 
-      if (this.username === '') {
-        const element = document.getElementById('username')
-        if (element !== null) {
-          element.classList.add('border-red-500')
-        }
-
-        this.error = '[Username] Please enter your username.'
-        return
-      }
-
-      const button = document.getElementById('login-btn')
-      if (button !== undefined) {
+      const button = document.getElementById('signup-btn')
+      if (button !== null) {
         button.disabled = true
       }
 
       this.isLoading = true
       try {
-        // this
+        const res = await fetch(`http://localhost:3301/api/v1/user?email=${this.email}`)
+        if (res.status === 200) {
+          this.isLoading = false
+          this.error = `Email "${this.email}" is already taken`
+          return
+        }
+
+        const data = JSON.stringify({ email: encode(this.email), pass: encode(this.password) })
+        const res2 = await fetch('http://localhost:3301/api/v1/signup', { body: data, method: 'post' })
+        if (res2.status === 400) {
+          this.isLoading = false
+          this.error = `Unknown error has occured: ${JSON.stringify(await res2.json())}`
+          return
+        }
+
+        this.isLoading = false
+        // do vuex stuff here OwO
+
+        this.error = 'There is no error silly! Your account was registered but this is a WIP, so... yay?...'
       } catch (ex) {
         this.isLoading = false
         this.error = `Unknown error has occured -- ${ex.message}`
