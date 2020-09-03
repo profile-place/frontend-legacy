@@ -11,8 +11,9 @@ module.exports = {
   },
   extends: ['@aero', '@nuxtjs', 'plugin:nuxt/recommended'],
   rules: {
+    '@vue/this-in-template': 'off',
     'no-warning-comments': 'off',
-    'max-len': 'off',
-    'no-trailing-spaces': 'off'
+    'no-trailing-spaces': 'off',
+    'max-len': 'off'
   }
 }

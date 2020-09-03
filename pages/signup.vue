@@ -3,6 +3,16 @@
     <Container class="mt-24" style="max-width: 28rem">
       <form ref="login" class="w-full max-w-xs  mx-auto" @submit.prevent="process">
         <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+          <input
+            id="username"
+            v-model="username"
+            class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            placeholder="your cute username here"
+          >
+        </div>
+        <div class="mb-6">
           <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
           <input
             id="user-id"
@@ -12,7 +22,7 @@
             placeholder="user@profile.place"
           >
         </div>
-        <div class="mb-6">
+        <div class="mb-8">
           <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
           <input
             id="password"
@@ -28,18 +38,18 @@
           </p>
         </template>
         <button
-          id="login-btn"
+          id="signup-btn"
           class="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           @click="submit()"
         >
-          Sign In
+          Sign Up
         </button>
         <p class="text-center mt-2">
           <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/forgot">Forgot
             Password?</a>
         </p>
         <p class="text-center mt-2">
-          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/signup">Sign Up!</a>
+          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/login">Log in!</a>
         </p>
       </form>
     </Container>
@@ -52,11 +62,12 @@ import Container from '@/components/Container'
 import FooterBar from '@/components/FooterBar'
 
 export default {
-  name: 'Login',
-  components: { FooterBar, Container },
+  name: 'Signup',
+  components: { Container, FooterBar },
   data () {
     return {
       isLoading: false,
+      username: '',
       password: '',
       email: '',
       error: null
@@ -93,7 +104,17 @@ export default {
           element.classList.add('border', 'border-red-500')
         }
 
-        this.error = '[Email] Email Address is invalid. Double check your entry.'
+        this.error = '[Email] Email Address is invalid, double check your entry.'
+        return
+      }
+
+      if (this.username === '') {
+        const element = document.getElementById('username')
+        if (element !== null) {
+          element.classList.add('border-red-500')
+        }
+
+        this.error = '[Username] Please enter your username.'
         return
       }
 
@@ -101,33 +122,20 @@ export default {
       if (button !== undefined) {
         button.disabled = true
       }
+
       this.isLoading = true
-
       try {
-        const res = await fetch('http://localhost:3301/api/v1/login', {
-          body: JSON.stringify({ email: encode(this.email), pass: this.password }),
-          method: 'post'
-        })
-
-        if (res.status === 400) {
-          this.isLoading = false
-          this.error = `Email "${this.email}" doesn't exist, did you mean to sign up?`
-        } else if (res.status === 404) {
-          this.isLoading = false
-          this.error = 'Credentials were invalid'
-        } else {
-          this.isLoading = false
-          this.error = 'An unknown error has occured, try again later'
-          console.error(await res.json())
-        }
+        // this
       } catch (ex) {
         this.isLoading = false
         this.error = `Unknown error has occured -- ${ex.message}`
       }
     }
   },
-  head: {
-    title: 'Login | profile.place'
+  head () {
+    return {
+      title: 'Sign Up | profile.place'
+    }
   }
 }
 </script>
