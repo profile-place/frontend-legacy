@@ -1,30 +1,47 @@
 {
-  "name": "frontend",
+  "name": "@profile.place/frontend",
+  "description": "Frontend repository for https://profile.place made with React and TailwindCSS",
   "version": "1.0.0",
   "private": true,
+  "repository": "https://github.com/profile-place/frontend",
+  "author": "The profile.place Team <team@profile.place> (https://profile.place)",
+  "license": "GPL-3.0",
+  "homepage": "https://profile.place",
   "scripts": {
-    "dev": "yarn lint && nuxt",
-    "build": "yarn lint && nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "yarn lint:js"
+    "cleanup:maps": "rm -fr src/styles/**.css.map",
+    "build:css": "yarn postcss src/styles/**/*.scsss --dir src/styles/ --ext css --verbose && yarn cleanup:maps",
+    "prepare": "rm -fr node_modules/@types/**/node_modules",
+    "start": "yarn lint && yarn build:css && yarn react-scripts start",
+    "build": "yarn lint && yarn build:css && yarn react-scripts build",
+    "lint": "eslint src --ext .js,.jsx --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "actual-urlsafe-base64": "^1.0.0",
-    "axios": "^0.20.0",
-    "nuxt": "^2.14.0"
+    "@augu/orchid": "1.6.1",
+    "@fortawesome/fontawesome-svg-core": "1.2.30",
+    "@fortawesome/free-brands-svg-icons": "5.14.0",
+    "@fortawesome/free-solid-svg-icons": "5.14.0",
+    "@fortawesome/react-fontawesome": "0.1.11",  
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-redux": "7.2.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.3",
+    "redux": "4.0.5",
+    "tailwindcss": "1.8.8"  
   },
   "devDependencies": {
-    "@aero/eslint-config": "^1.0.5",
-    "@nuxtjs/eslint-config": "^3.1.0",
-    "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/tailwindcss": "^2.1.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.5.0",
-    "eslint-plugin-nuxt": "^1.0.0",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^9.0.3",
-    "vue-eslint-parser": "^7.1.0"
+    "@augu/eslint-config": "1.8.2",
+    "@aero/eslint-config": "1.0.5",
+    "@csstools/postcss-sass": "4.0.0",
+    "autoprefixer": "9.8.6",
+    "eslint": "7.8.1",
+    "eslint-plugin-react": "7.20.6",
+    "postcss": "7.0.32",
+    "postcss-cli": "7.1.2",
+    "postcss-import": "12.0.1"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }

@@ -1,0 +1,21 @@
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/base';
+
+.section-mod {
+  border-radius: 1.5rem;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.50);
+  background: #282828;
+  border: 0;
+}
+
+body {
+  background-image: url(./static/images/background.png);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
