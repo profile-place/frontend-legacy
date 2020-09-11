@@ -1,3 +1,14 @@
 {
-  "extends": ["@augu/eslint-config/react.js", "@aero/eslint-config"]
+  "extends": ["@augu/eslint-config/react.js", "@aero/eslint-config"],
+  "globals": {
+	"localStorage": "readonly",
+	"navigator": "readonly",
+	"document": "readonly",
+	"window": "readonly",
+	"fetch": "readonly"
+  },
+  "rules": {
+	"react/jsx-indent": 0,
+	"no-unused-vars": 0
+  }
 }
